@@ -18,4 +18,5 @@ as a developer on your own Amazon Echo.
 The simplest interaction is
 
  User: "Alexa, ask Eno"
+
  Alexa: (reads back an oblique strategy from programming)
