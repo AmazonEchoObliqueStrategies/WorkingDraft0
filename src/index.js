@@ -8,7 +8,7 @@
  * Examples:
  * One-shot model:
  *  User: "Alexa, ask Eno for an oblique strategy"
- *  Alexa: "Here's your space fact: ..."
+ *  Alexa: "..." # insert random oblique strategy
  */
 
 /**
@@ -17,7 +17,7 @@
 var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
 /**
- * Array containing space facts.
+ * Array containing oblique strategies.
  */
 /**
  * Oblique Strategies for Programmers
@@ -76,15 +76,15 @@ EnoSkill.prototype.intentHandlers = {
 };
 
 /**
- * Gets a random new fact from the list and returns to the user.
+ * Gets a random new strategy from the list and returns to the user.
  */
 function handleNewFactRequest(response) {
-    // Get a random space fact from the space facts list
-    var factIndex = Math.floor(Math.random() * OBLIQUE_STRATEGIES.length);
-    var fact = OBLIQUE_STRATEGIES[factIndex];
+    // Get a random oblique strategy from OBLIQUE_STRATEGIES list
+    var strategyIndex = Math.floor(Math.random() * OBLIQUE_STRATEGIES.length);
+    var strategy = OBLIQUE_STRATEGIES[strategyIndex];
 
     // Create speech output
-    var speechOutput =  fact;
+    var speechOutput =  strategy;
 
     response.tellWithCard(speechOutput, "Eno", speechOutput);
 }
