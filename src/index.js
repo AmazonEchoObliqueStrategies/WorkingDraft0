@@ -7,7 +7,7 @@
  *
  * Examples:
  * One-shot model:
- *  User: "Alexa, ask Space Geek for a space fact"
+ *  User: "Alexa, ask Eno for an oblique strategy"
  *  Alexa: "Here's your space fact: ..."
  */
 
@@ -32,46 +32,46 @@ var OBLIQUE_STRATEGIES = require('./ObliqueStrategies');
 var AlexaSkill = require('./AlexaSkill');
 
 /**
- * SpaceGeek is a child of AlexaSkill.
+ * EnoSkill is a child of AlexaSkill.
  * To read more about inheritance in JavaScript, see the link below.
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance
  */
-var SpaceGeek = function () {
+var EnoSkill = function () {
     AlexaSkill.call(this, APP_ID);
 };
 
 // Extend AlexaSkill
-SpaceGeek.prototype = Object.create(AlexaSkill.prototype);
-SpaceGeek.prototype.constructor = SpaceGeek;
+EnoSkill.prototype = Object.create(AlexaSkill.prototype);
+EnoSkill.prototype.constructor = EnoSkill;
 
-SpaceGeek.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
-    console.log("SpaceGeek onSessionStarted requestId: " + sessionStartedRequest.requestId
+EnoSkill.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
+    console.log("EnoSkill onSessionStarted requestId: " + sessionStartedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any initialization logic goes here
 };
 
-SpaceGeek.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    console.log("SpaceGeek onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+EnoSkill.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
+    console.log("EnoSkill onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
     handleNewFactRequest(response);
 };
 
 /**
  * Overridden to show that a subclass can override this function to teardown session state.
  */
-SpaceGeek.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
-    console.log("SpaceGeek onSessionEnded requestId: " + sessionEndedRequest.requestId
+EnoSkill.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
+    console.log("EnoSkill onSessionEnded requestId: " + sessionEndedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
 };
 
-SpaceGeek.prototype.intentHandlers = {
+EnoSkill.prototype.intentHandlers = {
     GetNewFactIntent: function (intent, session, response) {
         handleNewFactRequest(response);
     },
 
     HelpIntent: function (intent, session, response) {
-        response.ask("You can ask Space Geek tell me a space fact, or, you can say exit... What can I help you with?");
+        response.ask("You can ask Eno tell me an oblique strategy, or, you can say exit... What can I help you with?");
     }
 };
 
@@ -91,8 +91,8 @@ function handleNewFactRequest(response) {
 
 // Create the handler that responds to the Alexa Request.
 exports.handler = function (event, context) {
-    // Create an instance of the SpaceGeek skill.
-    var spaceGeek = new SpaceGeek();
-    spaceGeek.execute(event, context);
+    // Create an instance of the EnoSkill skill.
+    var enoSkill = new EnoSkill();
+    enoSkill.execute(event, context);
 };
 
