@@ -46,13 +46,21 @@ EnoSkill.prototype = Object.create(AlexaSkill.prototype);
 EnoSkill.prototype.constructor = EnoSkill;
 
 EnoSkill.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
-    console.log("EnoSkill onSessionStarted requestId: " + sessionStartedRequest.requestId
-        + ", sessionId: " + session.sessionId);
+    console.log(
+        "EnoSkill onSessionStarted requestId: " +
+        sessionStartedRequest.requestId +
+        ", sessionId: " + session.sessionId
+    );
     // any initialization logic goes here
 };
 
 EnoSkill.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    console.log("EnoSkill onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+    console.log(
+        "EnoSkill onLaunch requestId: " +
+        launchRequest.requestId +
+        ", sessionId: " +
+        session.sessionId
+    );
     handleNewFactRequest(response);
 };
 
@@ -60,8 +68,12 @@ EnoSkill.prototype.eventHandlers.onLaunch = function (launchRequest, session, re
  * Overridden to show that a subclass can override this function to teardown session state.
  */
 EnoSkill.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
-    console.log("EnoSkill onSessionEnded requestId: " + sessionEndedRequest.requestId
-        + ", sessionId: " + session.sessionId);
+    console.log(
+        "EnoSkill onSessionEnded requestId: " +
+        sessionEndedRequest.requestId +
+        ", sessionId: " +
+        session.sessionId
+    );
     // any cleanup logic goes here
 };
 
@@ -71,7 +83,9 @@ EnoSkill.prototype.intentHandlers = {
     },
 
     HelpIntent: function (intent, session, response) {
-        response.ask("You can ask Eno tell me an oblique strategy, or, you can say exit... What can I help you with?");
+        response.ask(
+            "You can ask Eno tell me an oblique strategy, or, you can say exit... What can I help you with?"
+        );
     }
 };
 
