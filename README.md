@@ -12,6 +12,7 @@ https://github.com/RobBlackwell/oblique-strategies-for-programmers
 > I believe that programming is a similarly artistic and creative endeavour, and this file contains a list of oblique strategies that I've experimented with.
 
 > Rob Blackwell
+
 > June 2014
 
 The code is a lightly modified version of the Amazon Alexa Skills
