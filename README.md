@@ -7,6 +7,15 @@ The oblique strategies are from Rob Blackwell and used with his permission.
 
 https://github.com/RobBlackwell/oblique-strategies-for-programmers
 
+<blockquote>
+In 1975 Brian Eno and Peter Schmidt printed a series of cards designed to help musicians break creative blocks by encouraging lateral thinking. Whenever they got stuck, they'd deal a random card.
+
+I believe that programming is a similarly artistic and creative endeavour, and this file contains a list of oblique strategies that I've experimented with.
+
+Rob Blackwell
+June 2014
+</blockquote>
+
 The code is a lightly modified version of the Amazon Alexa Skills
 demo program "Space Geek"
 
